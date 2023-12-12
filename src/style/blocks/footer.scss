@@ -1,0 +1,30 @@
+.footer {
+	&__container {
+		display: flex;
+		justify-content: space-between;
+		flex-direction: column-reverse;
+		padding-bottom: 40px;
+		gap: 10px;
+
+		@include onTablet {
+			flex-direction: row;
+
+			padding-bottom: 50px;
+		}
+
+		&__links {
+			margin-bottom: 20rem;
+		}
+	}
+}
+@supports (padding-bottom: clamp(2.5rem, 2.3214285714rem + 0.8928571429vw, 3.125rem)) {
+	.footer__container {
+		padding-bottom: clamp(2.5rem, 2.3214285714rem + 0.8928571429vw, 3.125rem);
+	}
+}
+
+@supports not (padding-bottom: clamp(2.5rem, 2.3214285714rem + 0.8928571429vw, 3.125rem)) {
+	.footer__container {
+		padding-bottom: calc(2.5rem + 0.625 * (100vw - 20rem) / 70);
+	}
+}

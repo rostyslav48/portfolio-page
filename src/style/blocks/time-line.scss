@@ -1,0 +1,106 @@
+.time-line {
+	background-color: var(--bg-color);
+
+	padding-block: 80px;
+
+	@include onDesktop {
+		padding-top: 180px;
+		padding-bottom: 180px;
+	}
+
+	&__container {
+		display: grid;
+		-moz-column-gap: 30px;
+		column-gap: 30px;
+		grid-template-columns: 1fr;
+
+		@include onDesktop {
+			grid-template-columns: 5fr 7fr;
+		}
+	}
+
+	& .section-title {
+		margin-bottom: 40px;
+	}
+
+	&__caption {
+		max-width: 450px;
+	}
+
+	&__descr {
+		max-width: 330px;
+		line-height: 120%;
+
+		margin-bottom: 40px;
+	}
+
+	&__items {
+		display: grid;
+
+		-moz-column-gap: 18.5185%;
+		column-gap: 18.5185%;
+
+		grid-template-columns: 1fr;
+		row-gap: 40px;
+
+		@include onTablet {
+			grid-template-columns: 1fr 1fr;
+			row-gap: 60px;
+			-moz-column-gap: 10%;
+			column-gap: 10%;
+		}
+
+		@include onDesktop {
+			row-gap: 80px;
+		}
+	}
+
+	&__year {
+		margin-bottom: 30px;
+		font-size: 28px;
+
+		@include onDesktop {
+			font-size: 36px;
+		}
+	}
+
+	&__text {
+		line-height: 140%;
+	}
+
+	@supports (padding-top: clamp(5rem, 3.2142857143rem + 8.9285714286vw, 11.25rem)) {
+		.time-line {
+			padding-top: clamp(5rem, 3.2142857143rem + 8.9285714286vw, 11.25rem);
+		}
+	}
+
+	@supports not (padding-top: clamp(5rem, 3.2142857143rem + 8.9285714286vw, 11.25rem)) {
+		.time-line {
+			padding-top: calc(5rem + 6.25 * (100vw - 20rem) / 70);
+		}
+	}
+
+	@supports (padding-bottom: clamp(5rem, 3.2142857143rem + 8.9285714286vw, 11.25rem)) {
+		.time-line {
+			padding-bottom: clamp(5rem, 3.2142857143rem + 8.9285714286vw, 11.25rem);
+		}
+	}
+
+	@supports not (padding-bottom: clamp(5rem, 3.2142857143rem + 8.9285714286vw, 11.25rem)) {
+		.time-line {
+			padding-bottom: calc(5rem + 6.25 * (100vw - 20rem) / 70);
+		}
+	}
+
+	@supports (font-size: clamp(1.75rem, 1.6071428571rem + 0.7142857143vw, 2.25rem)) {
+		.time-line__year {
+			font-size: clamp(1.75rem, 1.6071428571rem + 0.7142857143vw, 2.25rem);
+		}
+	}
+
+	@supports not (font-size: clamp(1.75rem, 1.6071428571rem + 0.7142857143vw, 2.25rem)) {
+		.time-line__year {
+			font-size: calc(1.75rem + 0.5 * (100vw - 20rem) / 70);
+		}
+	}
+}

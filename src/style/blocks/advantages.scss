@@ -1,0 +1,72 @@
+.advantages {
+	background-color: var(--bg-color);
+
+	@include onDesktop {
+		padding-block: 180px;
+	}
+
+	& .section-title {
+		margin-bottom: 30px;
+
+		@include onDesktop {
+			max-width: 810px;
+			margin-bottom: 40px;
+
+			font-size: 45px;
+		}
+	}
+
+	&__descr {
+		margin-bottom: 40px;
+
+		@include onDesktop {
+			max-width: 810px;
+
+			margin-bottom: 80px;
+		}
+	}
+
+	&__items {
+		display: grid;
+		grid-template-columns: 1fr;
+		row-gap: 40px;
+
+		@include onTablet {
+			grid-template-columns: 1fr 1fr 1fr;
+			-moz-column-gap: 40px;
+			column-gap: 40px;
+		}
+
+		@include onDesktop {
+			-moz-column-gap: 60px;
+			column-gap: 60px;
+		}
+	}
+
+	&__title {
+		font-size: 22px;
+		font-weight: 600;
+		border-bottom: 1px solid var(--border-color);
+
+		padding-bottom: 20px;
+
+		@include onTablet {
+			font-size: 26px;
+		}
+	}
+
+	&__text {
+		padding-top: 20px;
+		line-height: 140%;
+	}
+
+	& .hobby__container {
+		display: grid;
+
+		@include onDesktop {
+			grid-template-columns: 1fr 1fr;
+			-moz-column-gap: 30px;
+			column-gap: 30px;
+		}
+	}
+}

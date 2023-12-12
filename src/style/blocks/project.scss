@@ -1,0 +1,103 @@
+.project {
+	background-color: var(--bg-color);
+	padding-block: 80px;
+
+	@include onDesktop {
+		padding-block: 180px;
+	}
+
+	&__content {
+		display: grid;
+		grid-template-columns: 1fr;
+		-moz-column-gap: 30px;
+		column-gap: 30px;
+
+		@include onTablet {
+			grid-template-columns: 4fr 8fr;
+		}
+	}
+
+	&__sub-title {
+		font-weight: 600;
+		line-height: 120%;
+		margin-bottom: 40px;
+		max-width: none;
+		font-size: 22px;
+
+		@include onTablet {
+			max-width: 330px;
+		}
+
+		@include onDesktop {
+			font-size: 26px;
+		}
+	}
+
+	&__text {
+		max-width: 570px;
+	}
+
+	&__text p {
+		margin-bottom: 20px;
+	}
+
+	&__text p:last-child {
+		margin-bottom: 0;
+	}
+
+	& .section-title {
+		margin-bottom: 40px;
+
+		@include onDesktop {
+			margin-bottom: 80px;
+		}
+	}
+
+	@supports (padding-top: clamp(5rem, 3.2142857143rem + 8.9285714286vw, 11.25rem)) {
+		.project {
+			padding-top: clamp(5rem, 3.2142857143rem + 8.9285714286vw, 11.25rem);
+		}
+	}
+
+	@supports not (padding-top: clamp(5rem, 3.2142857143rem + 8.9285714286vw, 11.25rem)) {
+		.project {
+			padding-top: calc(5rem + 6.25 * (100vw - 20rem) / 70);
+		}
+	}
+
+	@supports (padding-bottom: clamp(5rem, 3.2142857143rem + 8.9285714286vw, 11.25rem)) {
+		.project {
+			padding-bottom: clamp(5rem, 3.2142857143rem + 8.9285714286vw, 11.25rem);
+		}
+	}
+
+	@supports not (padding-bottom: clamp(5rem, 3.2142857143rem + 8.9285714286vw, 11.25rem)) {
+		.project {
+			padding-bottom: calc(5rem + 6.25 * (100vw - 20rem) / 70);
+		}
+	}
+
+	@supports (margin-bottom: clamp(2.5rem, 1.7857142857rem + 3.5714285714vw, 5rem)) {
+		.project .section-title {
+			margin-bottom: clamp(2.5rem, 1.7857142857rem + 3.5714285714vw, 5rem);
+		}
+	}
+
+	@supports not (margin-bottom: clamp(2.5rem, 1.7857142857rem + 3.5714285714vw, 5rem)) {
+		.project .section-title {
+			margin-bottom: calc(2.5rem + 2.5 * (100vw - 20rem) / 70);
+		}
+	}
+
+	@supports (font-size: clamp(1.375rem, 1.3035714286rem + 0.3571428571vw, 1.625rem)) {
+		.project__sub-title {
+			font-size: clamp(1.375rem, 1.3035714286rem + 0.3571428571vw, 1.625rem);
+		}
+	}
+
+	@supports not (font-size: clamp(1.375rem, 1.3035714286rem + 0.3571428571vw, 1.625rem)) {
+		.project__sub-title {
+			font-size: calc(1.375rem + 0.25 * (100vw - 20rem) / 70);
+		}
+	}
+}

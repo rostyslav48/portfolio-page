@@ -1,0 +1,51 @@
+.works {
+	padding-block: 80px;
+
+	@include onDesktop {
+		padding-block: 180px;
+	}
+
+	& .section-title {
+		margin-bottom: 40px;
+
+		@include onDesktop {
+			margin-bottom: 80px;
+		}
+	}
+
+	@supports (padding-top: clamp(5rem, 3.2142857143rem + 8.9285714286vw, 11.25rem)) {
+		.works {
+			padding-top: clamp(5rem, 3.2142857143rem + 8.9285714286vw, 11.25rem);
+		}
+	}
+
+	@supports not (padding-top: clamp(5rem, 3.2142857143rem + 8.9285714286vw, 11.25rem)) {
+		.works {
+			padding-top: calc(5rem + 6.25 * (100vw - 20rem) / 70);
+		}
+	}
+
+	@supports (padding-bottom: clamp(5rem, 3.2142857143rem + 8.9285714286vw, 11.25rem)) {
+		.works {
+			padding-bottom: clamp(5rem, 3.2142857143rem + 8.9285714286vw, 11.25rem);
+		}
+	}
+
+	@supports not (padding-bottom: clamp(5rem, 3.2142857143rem + 8.9285714286vw, 11.25rem)) {
+		.works {
+			padding-bottom: calc(5rem + 6.25 * (100vw - 20rem) / 70);
+		}
+	}
+
+	@supports (margin-bottom: clamp(2.5rem, 1.7857142857rem + 3.5714285714vw, 5rem)) {
+		.works .section-title {
+			margin-bottom: clamp(2.5rem, 1.7857142857rem + 3.5714285714vw, 5rem);
+		}
+	}
+
+	@supports not (margin-bottom: clamp(2.5rem, 1.7857142857rem + 3.5714285714vw, 5rem)) {
+		.works .section-title {
+			margin-bottom: calc(2.5rem + 2.5 * (100vw - 20rem) / 70);
+		}
+	}
+}

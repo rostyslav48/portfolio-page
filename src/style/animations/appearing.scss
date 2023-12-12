@@ -1,0 +1,67 @@
+@keyframes foldFromRight {
+	0% {
+		transform: translateX(500px);
+		opacity: 0;
+	}
+	100% {
+		transform: translateX(0);
+		opacity: 1;
+	}
+}
+
+// right-fold
+.fold-from-right {
+	animation: foldFromRight ease-in $appearing-animation-duration;
+}
+
+@keyframes foldFromLeft {
+	0% {
+		transform: translateX(-500px);
+		opacity: 0;
+	}
+	100% {
+		transform: translateX(0);
+		opacity: 1;
+	}
+}
+
+// left-fold
+.fold-from-left {
+	animation: foldFromLeft ease-in $appearing-animation-duration;
+}
+
+@keyframes animate-fade {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+// pop-appear
+.pop-appearing {
+	animation-name: animate-fade;
+	animation-fill-mode: backwards;
+	animation-name: animate-pop;
+	animation-timing-function: cubic-bezier(0.26, 0.53, 0.74, 1.48);
+	animation-duration: 0.5s;
+}
+
+@keyframes animate-pop {
+	0% {
+		opacity: 0;
+		transform: scale(0.5, 0.5);
+	}
+
+	100% {
+		opacity: 1;
+		transform: scale(1, 1);
+	}
+}
+
+@for $i from 1 through 10 {
+	.delay-#{$i} {
+		animation-delay: #{0.1 * $i}s;
+	}
+}
